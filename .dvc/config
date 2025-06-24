@@ -1,0 +1,5 @@
+[core]
+    remote = data
+['remote "data"']
+    url = s3://agti-central-banks-snapshots
+    profile = postfiat
