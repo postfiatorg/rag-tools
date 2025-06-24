@@ -1,0 +1,12 @@
+md5: 1a2858b368458f24b55e05016f6439de
+frozen: true
+deps:
+- db:
+    connection: pgsql
+    file_format: csv
+    table: central_banks_g10_categories
+outs:
+- md5: 1ee55b18fd8ead2c5581d03b5cf701ee
+  size: 9542544
+  hash: md5
+  path: central_banks_g10_categories.csv

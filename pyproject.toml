@@ -15,6 +15,7 @@ qdrant-client = "^1.14.3"
 langchain-qdrant = "^0.2.0"
 langchain = "^0.3.26"
 langchain-openai = "^0.3.25"
+psycopg2 = "^2.9.10"
 
 
 [tool.poetry.group.dev.dependencies]
