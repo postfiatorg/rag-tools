@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "rag-tools"
+version = "0.1.0"
+description = "Tools for testing and benchmarking AGTI RAG system"
+authors = ["Lukas Kiss <lukaskiss222@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pandas = "^2.3.0"
+numpy = "^2.3.1"
+ipykernel = "^6.29.5"
+qdrant-client = "^1.14.3"
+langchain-qdrant = "^0.2.0"
+langchain = "^0.3.26"
+langchain-openai = "^0.3.25"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+ruff = "^0.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py311"
+line-length     = 120
+exclude = [
+  ".git", ".mypy_cache", ".ruff_cache", ".venv", ".tox",
+  "build", "dist", "__pypackages__", "_build",
+]
+
+[tool.ruff.lint]
+# Core + widely-adopted extras
+select = [
+  "E",   # pycodestyle (style errors)
+  "F",   # pyflakes   (logic errors)
+  "W",   # pycodestyle warnings
+  "B",   # bugbear    (safety & correctness)
+  "I",   # isort-style import order
+  "UP",  # pyupgrade  (modern syntax)
+  "C90", # mccabe     (complexity)
+  "N",   # pep8-naming
+  "A",   # built-ins shadowing
+  "S",   # bandit-like security checks
+  "RUF", # Ruff-specific niceties
+]
+ignore = [
+  "E203",     # keep Black-compatible whitespace rules
+  "D203", "D213",     # mutually-exclusive docstring styles
+]
+
+# Auto-fix everything that’s safe; disallow riskier rewrites
+fixable   = ["ALL"]
+unfixable = ["B006", "B007"]  # “yield-inside-comprehension”, “loop-variable-shadowing”
+
+# McCabe complexity threshold ──► must be in its own table
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "F403"]  # re-export patterns
