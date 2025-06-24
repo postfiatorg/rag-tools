@@ -1,0 +1,5 @@
+outs:
+- md5: 1ee55b18fd8ead2c5581d03b5cf701ee
+  size: 9542544
+  hash: md5
+  path: central_banks_g10_categories.csv

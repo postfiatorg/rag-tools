@@ -1,0 +1,5 @@
+outs:
+- md5: 396a1c0f5e94cdf04c53556a72ebe22d
+  size: 50224507
+  hash: md5
+  path: central_banks_g10_links.csv
