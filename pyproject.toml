@@ -20,6 +20,7 @@ langchain-openai = "^0.3.25"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.2.0"
 ruff = "^0.12.0"
+dvc = {extras = ["all"], version = "^3.60.1"}
 
 [build-system]
 requires = ["poetry-core"]
