@@ -3,5 +3,8 @@
 ['remote "data"']
     url = s3://agti-central-banks-snapshots
     profile = postfiat
+['remote "agti-pdfs"']
+    url = s3://agti-central-banks
+    profile = postfiat
 ['db "pgsql"']
     url = postgresql://dvc_readonly@5.161.65.180:5432/sigildb
