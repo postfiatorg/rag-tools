@@ -1,0 +1,3 @@
+[submodule "agti"]
+	path = agti
+	url = https://github.com/postfiatorg/agti

@@ -16,6 +16,37 @@ langchain-qdrant = "^0.2.0"
 langchain = "^0.3.26"
 langchain-openai = "^0.3.25"
 psycopg2 = "^2.9.10"
+unstructured = {extras = ["pdf"], version = "^0.18.1"}
+docker = "^7.1.0"
+langchain-unstructured = "*"
+onnxruntime = ">=1.22,<2.0"
+langchain-community = "^0.3.26"
+agti = { path = "agti", develop = true}
+
+torch       = { version = "^2.7", source = "pytorch-cpu", markers = "extra=='cpu' and extra!='cuda'" }
+torchvision = { version = "^0.22", source = "pytorch-cpu", markers = "extra=='cpu' and extra!='cuda'" }
+blinker = "1.7.0"
+[tool.poetry.group.cuda]
+optional = true
+
+# https://github.com/pytorch/pytorch/blob/main/RELEASE.md#release-compatibility-matrix
+[tool.poetry.group.cuda.dependencies]
+    torch       = { version = "^2.7", source = "pytorch-cuda", markers = "extra=='cuda' and extra!='cpu'" }
+    torchvision = { version = "^0.22", source = "pytorch-cuda", markers = "extra=='cuda' and extra!='cpu'" }
+
+[tool.poetry.extras]
+cpu  = ["torch", "torchvision"]
+cuda = ["torch", "torchvision"]
+
+[[tool.poetry.source]]
+name     = "pytorch-cuda"
+priority = "explicit"
+url      = "https://download.pytorch.org/whl/cu128"
+
+[[tool.poetry.source]]
+name     = "pytorch-cpu"
+priority = "explicit"
+url      = "https://download.pytorch.org/whl/cpu"
 
 
 [tool.poetry.group.dev.dependencies]

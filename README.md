@@ -8,3 +8,20 @@ Tools for testing and benchmarking AGTI RAG system
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 
 
+
+## Installation Modes
+
+| Command                           | Behavior                                                       |
+| --------------------------------- | -------------------------------------------------------------- |
+| `poetry sync`                     | Does not install PyTorch (import fails).                       |
+| `poetry sync -E cpu`              | Installs PyTorch with CPU only.                                |
+| `poetry sync -E cuda --with cuda` | Installs the CUDA variant of PyTorch. Expects NVIDIA hardware. |
+
+>[!WARNING]
+> The example below is likely not what you want:
+>
+> | Command               | Behavior                                                                 |
+> | --------------------- | ------------------------------------------------------------------------ |
+> | `poetry sync -E cuda` | Actually installs the CPU variant of PyTorch without errors or warnings. |
+
+
